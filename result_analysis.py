@@ -17,7 +17,7 @@ def main():
             l = 0
             for i in range(5):
                 final_results[al][f'{case}_{i}'] = np.average(data[al][case][i])
-                l += np.average(data[al][case][i])*i
+                l += np.average(data[al][case][i])*(i+1)
             final_results[al][f'{case}_overall'] = l/15
     with open('final_results.json', "w") as file:
         json.dump(final_results, file, indent=3)
